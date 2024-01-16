@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit profile</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="header-container flex">
+        <div class="header-child flex">
+            <img src="../../images/icon.png" alt="icon" width="32">
+        </div>
+        <div class="header-child flex">
+            <h3>EDIT PROFILE</h3>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <form id="edit-form">
+            <div class="status-container flex mb0.8">
+                <span>Do you want to enable this profile?</span>
+                <div class="radio-container flex">
+                    <input type="radio" id="enabled" name="statusOption" value="enabled" checked>
+                    <label for="enabled">Yes</label>
+                    <input type="radio" id="disabled" name="statusOption" value="disabled">
+                    <label for="disabled">No</label>
+                </div>
+            </div>
+
+            <div class="primary-container mb0.8 flex">
+                <div class="primary-header flex">
+                    <span>Do you want this profile to be the primary profile?</span>
+                    <div class="radio-container flex">
+                        <input type="radio" id="yes" name="primaryOption" value="yes">
+                        <label for="yes">Yes</label>
+
+                        <input type="radio" id="no" name="primaryOption" value="no" checked>
+                        <label for="no">No</label>
+                    </div>
+                </div>
+                <span class="current-primary" id="current-primary" style="display: block;">At this moment <i
+                        id="current-primary-email"></i> is the primary profile, by setting this profile to
+                    primary will remove the current profile from being the primary profile.</span>
+            </div>
+
+            <div class="email-container mb0.8">
+                <label for="">Please provide the emailaddress:</label>
+                <input id="email" type="email" placeholder="email@SwiftEmailFill.com">
+            </div>
+
+            <div class="suffix-container mb0.8 flex">
+                <div class="suffix-header flex">
+                    <span>Do you want to use a suffix?</span>
+                    <div class="radio-container flex">
+                        <input type="radio" id="domain" name="suffixOption" value="domain">
+                        <label for="domain">Domain</label>
+
+                        <input type="radio" id="custom" name="suffixOption" value="custom">
+                        <label for="custom">Custom</label>
+
+                        <input type="radio" id="none" name="suffixOption" value="none" checked>
+                        <label for="none">None</label>
+                    </div>
+                </div>
+                <div class="suffix-examples flex">
+                    <span>Domain: email+[domainname]@SwiftEmailFill.com</span>
+                    <span>Custom: email+example@SwiftEmailFill.com</span>
+                    <span>No: email@SwiftEmailFill.com</span>
+                </div>
+            </div>
+
+            <div class="customsuffix-container mb0.8">
+                <div id="custom-input" class="custom-input" style="display: none;">
+                    <label for="custom-suffix">Please provide the custom suffix:</label>
+                    <input type="text" id="custom-suffix">
+                </div>
+            </div>
+
+            <div class="domainfilter-container mb0.8">
+                <span>Please provide a list with the (sub)domainnames for this profile?</span>
+                <textarea name="domain-filter" id="domain-filter" cols="60" rows="1"
+                    placeholder="['swiftemailfill.com', 'login.swiftemailfill.com']"></textarea>
+            </div>
+
+            <div class="message-container mb0.8 flex hidden" id="message-container">
+                <span id="message"></span>
+            </div>
+
+            <div class="button-container">
+                <button id="save-button" type="submit">Save Changes</button>
+                <button id="close-button">Close</button>
+            </div>
+        </form>
+    </div>
+    <script src="edit.js"></script>
+</body>
+
+</html>

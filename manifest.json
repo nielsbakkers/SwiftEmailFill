@@ -1,0 +1,65 @@
+{
+    "manifest_version": 2,
+    "name": "SwiftEmailFill",
+    "version": "1.0",
+    "description": "Experience a new level of efficiency with SwiftMailFill! This Firefox extension enables one-click form filling by creating profiles with predefined emails, suffixes, and domain filters. Customize your online interactions and save valuable time.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "id@swiftemailfill.com",
+            "strict_min_version": "42.0"
+        }
+    },
+    "icons": {
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "64": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "contextMenus",
+        "menus"
+    ],
+    "browser_action": {
+        "default_title": "SwiftEmailFill",
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "images/icon.png",
+            "32": "images/icon.png",
+            "48": "images/icon.png",
+            "64": "images/icon.png",
+            "128": "images/icon.png"
+        }
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "commands": {
+        "fillEmailShortcut": {
+            "suggested_key": {
+                "default": "Ctrl+Q",
+                "mac": "Command+Q"
+            },
+            "description": "Fill email"
+        }
+    }
+}

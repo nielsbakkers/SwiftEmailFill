@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="header-child">
+            <img src="../../images/icon.png" alt="icon" width="32">
+        </div>
+        <div class="header-child">
+            <h3>GLOBAL OPTIONS</h3>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <form>
+            <div class="shortcut-container">
+                <div class="shortcut-header">
+                    <h3>Shortcut</h3>
+                    <span>You are able to change the shortcut which can be used to fill the email. Click on the input box and use the desired shortcut. After clicking the button the shortcut will be saved.</span>
+                </div>
+                <div class="shortcut-content">
+                    <span>Shortcut:</span>
+                    <input type="text" id="shortcut">
+    
+                    <button id="update-shortcut">
+                        <img src="../../images/enter.svg">
+                        </button>
+                </div>
+            </div>
+
+            <div class="message-container hidden mb0.8 flex" id="message-container">
+                <span id="message"></span>
+            </div>
+
+            <div class="button-container">
+                <button id="close-button">Close</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="options.js"></script>
+</body>
+
+</html>
